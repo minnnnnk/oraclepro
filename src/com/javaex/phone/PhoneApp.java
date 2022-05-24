@@ -13,9 +13,9 @@ public class PhoneApp {
 		String name;
 		String hp;
 		String company;
-		System.out.println("*************************************");
-		System.out.println("*\t전화번호 관리 프로그램\t    *");
-		System.out.println("*************************************");
+		System.out.println("******************************************");
+		System.out.println("*         전화번호 관리 프로그램         *");
+		System.out.println("******************************************");
 		
 		
 		while(true) {
@@ -83,9 +83,9 @@ public class PhoneApp {
 					}
 				}
 			}else if (mNum == 6) {
-				System.out.println("**************************************");
-				System.out.println("*             감사합니다             *");
-				System.out.println("**************************************");
+				System.out.println("******************************************");
+				System.out.println("*               감사합니다               *");
+				System.out.println("******************************************");
 				break;
 			}else {
 				System.out.println("[다시 입력해주세요.]");
