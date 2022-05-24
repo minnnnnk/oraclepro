@@ -54,7 +54,7 @@ public class PhoneDao {
 			System.out.println("error:" + e);
 		}
 	}
-	//insert
+	//등록하기
 	public int phoneInsert(String name ,String hp, String company) {
 		int count = -1;
 		
@@ -84,7 +84,7 @@ public class PhoneDao {
 		this.cloes();
 		return count;
 	}
-	
+	//삭제하기
 	public int phoneDelete(int personId) {
 		int count = -1;
 
@@ -109,7 +109,7 @@ public class PhoneDao {
 		this.cloes();
 		return count;
 	}
-	
+	//변경하기
 	public int phoneUpdate(String name , String hp , String company, int personId) {
 		int count = -1;
 
@@ -140,7 +140,7 @@ public class PhoneDao {
 		this.cloes();
 		return count;
 	}
-	
+	//리스트보기
 	public List<PersonVo> phoneSelect() {
 		List<PersonVo> personList = new ArrayList<PersonVo>();
 		try {
