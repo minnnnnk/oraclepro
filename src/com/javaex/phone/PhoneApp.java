@@ -42,6 +42,7 @@ public class PhoneApp {
 				System.out.print("회사번호 >");
 				company = sc.next();
 				
+				//등록한 데이터 DB에 넣어주기
 				phoneDao.phoneInsert(name, hp, company);
 				System.out.println("[1건 등록되었습니다]");	
 			}else if (mNum == 3) {
@@ -56,6 +57,7 @@ public class PhoneApp {
 				System.out.print("회사번호 >");
 				company = sc.next();
 				
+				//등록한 데이터 DB에 넣어주기
 				phoneDao.phoneUpdate(name, hp, company, num);
 				System.out.println("[1건 수정되었습니다.]");
 			}else if (mNum == 4) {
@@ -64,6 +66,7 @@ public class PhoneApp {
 				System.out.print(">번호 :");
 				int num = sc.nextInt();
 				
+				//삭제한 데이터 DB에 넣어주기
 				phoneDao.phoneDelete(num);
 				System.out.println("[1건 삭제되었습니다.]");
 			}else if (mNum == 5) {
