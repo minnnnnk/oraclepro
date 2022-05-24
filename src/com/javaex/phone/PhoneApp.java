@@ -57,7 +57,7 @@ public class PhoneApp {
 				System.out.print("회사번호 >");
 				company = sc.next();
 				
-				//등록한 데이터 DB에 넣어주기
+				//수정한 데이터 DB에 넣어주기
 				phoneDao.phoneUpdate(name, hp, company, num);
 				System.out.println("[1건 수정되었습니다.]");
 			}else if (mNum == 4) {
