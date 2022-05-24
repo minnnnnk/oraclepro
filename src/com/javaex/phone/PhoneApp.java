@@ -25,37 +25,41 @@ public class PhoneApp {
 			mNum = sc.nextInt();
 		
 			if(mNum == 1) {
-					System.out.println("<1.리스트>");
-					List<PersonVo> personList = phoneDao.phoneSelect();
-					for(int i = 0; i<personList.size(); i++  ) {
-						PersonVo personvo = personList.get(i);
-						System.out.println(personvo.getPersonId()+".   "+personvo.getName()+"\t"+personvo.getHp()+"\t"+personvo.getCompany());
-					}
+				//리스트보기
+				System.out.println("<1.리스트>");
+				List<PersonVo> personList = phoneDao.phoneSelect();
+				for(int i = 0; i<personList.size(); i++  ) {
+					PersonVo personvo = personList.get(i);
+					System.out.println(personvo.getPersonId()+".   "+personvo.getName()+"\t"+personvo.getHp()+"\t"+personvo.getCompany());
+				}
 			}else if (mNum == 2) {
-					System.out.println("<2.등록>");
-					System.out.print("이름 >");
-					name = sc.next();
-					System.out.print("휴대전화 >");
-					hp = sc.next();
-					System.out.print("회사번호 >");
-					company = sc.next();
-					
-					phoneDao.phoneInsert(name, hp, company);
-					System.out.println("[1건 등록되었습니다]");	
+				//등록
+				System.out.println("<2.등록>");
+				System.out.print("이름 >");
+				name = sc.next();
+				System.out.print("휴대전화 >");
+				hp = sc.next();
+				System.out.print("회사번호 >");
+				company = sc.next();
+				
+				phoneDao.phoneInsert(name, hp, company);
+				System.out.println("[1건 등록되었습니다]");	
 			}else if (mNum == 3) {
-					System.out.println("<3.수정>");
-					System.out.println("번호 >");
-					int num = sc.nextInt();
-					System.out.print("이름 >");
-					name = sc.next();
-					System.out.print("휴대전화 >");
-					hp = sc.next();
-					System.out.print("회사번호 >");
-					company = sc.next();
-					
-					phoneDao.phoneUpdate(name, hp, company, num);
-					System.out.println("[1건 수정되었습니다.]");
+				//수정
+				System.out.println("<3.수정>");
+				System.out.println("번호 >");
+				int num = sc.nextInt();
+				System.out.print("이름 >");
+				name = sc.next();
+				System.out.print("휴대전화 >");
+				hp = sc.next();
+				System.out.print("회사번호 >");
+				company = sc.next();
+				
+				phoneDao.phoneUpdate(name, hp, company, num);
+				System.out.println("[1건 수정되었습니다.]");
 			}else if (mNum == 4) {
+				//삭제
 				System.out.println("<4.삭제>");
 				System.out.print(">번호 :");
 				int num = sc.nextInt();
@@ -63,12 +67,14 @@ public class PhoneApp {
 				phoneDao.phoneDelete(num);
 				System.out.println("[1건 삭제되었습니다.]");
 			}else if (mNum == 5) {
+				//검색
 				System.out.println("<5. 검색>");
 				System.out.print("검색어 : ");
 				String search = sc.next();
+				//리스트와 똑같음
 				List<PersonVo> personList = phoneDao.phoneSelect();
 				for(int i = 0; i<personList.size(); i++  ) {
-					PersonVo personvo = personList.get(i);
+					PersonVo personvo = personList.get(i); //contais로 검색해주기
 					if(personvo.getName().contains(search) || personvo.getHp().contains(search) || personvo.getCompany().contains(search)) {
 						System.out.println(personvo.getPersonId()+".   "+personvo.getName()+"\t"+personvo.getHp()+"\t"+personvo.getCompany());
 					}
